@@ -33,5 +33,17 @@ namespace GZBClient.Properties {
                 this["AccountNameList"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string AccountNames {
+            get {
+                return ((string)(this["AccountNames"]));
+            }
+            set {
+                this["AccountNames"] = value;
+            }
+        }
     }
 }
