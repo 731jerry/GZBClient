@@ -14,25 +14,12 @@ namespace GZBClient
     {
         //连接用的字符串  
         private static String OnlineConnStr;
-        private static String LocalConnStr;
-
-        //public String OnlineConnStr
-        //{
-        //    get { return this.onlineConnStr; }
-        //    set { this.onlineConnStr = value; }
-        //}
-
-        //public String LocalConnStr
-        //{
-        //    get { return this.localConnStr; }
-        //    set { this.localConnStr = value; }
-        //}
 
         private DatabaseConnector()
         {
         }
 
-        //DbManager单实例  
+        //单例  
         private static DatabaseConnector _instance = null;
         public static DatabaseConnector Connector
         {
@@ -49,11 +36,11 @@ namespace GZBClient
 
         #region 联网
 
-        public void UserLogin(string acc, string psw)
+        public void UserLogin(String acc, String psw)
         {
             using (MySqlConnection con = new MySqlConnection(OnlineConnStr))
             {
-                string hash = UniversalFunctions.GetInstence().GetMd5Hash(MD5.Create(), psw);
+                String hash = UniversalFunctions.GetInstence().GetMd5Hash(MD5.Create(), psw);
 
                 StringBuilder sbSQL = new StringBuilder(
                         @"SELECT Count(id),id,userid,password,companyNickname,workloads,company,companyowner,address,bankname,bankcard,phone,fax,QQ,email,cast(GZB_addtime as char) as GZB_addtime,GZB_degree,GZB_expiretime,GZB_isonline,notification,companyBalance,GZB_signature FROM users WHERE userid = '");
@@ -63,7 +50,7 @@ namespace GZBClient
                 sbSQL.Append(hash.ToLower());
                 sbSQL.Append(@"'");
 
-                string SQLforGeneral = sbSQL.ToString();
+                String SQLforGeneral = sbSQL.ToString();
 
                 using (MySqlCommand cmd = new MySqlCommand(SQLforGeneral, con))
                 {
@@ -123,12 +110,12 @@ namespace GZBClient
         }
 
         // 修改数据
-        public int OnlineUpdateData(string table, string[] query, string[] value, string id)
+        public int OnlineUpdateData(String table, String[] query, String[] value, String id)
         {
             int affectedRows = -1;
             using (MySqlConnection con = new MySqlConnection(OnlineConnStr))
             {
-                string innerSQL = "";
+                String innerSQL = "";
 
                 for (int i = 0; i < query.Length; i++)
                 {
@@ -138,7 +125,7 @@ namespace GZBClient
                 {
                     innerSQL = innerSQL.Substring(0, innerSQL.Length - 1); // 去掉最后的逗号
                 }
-                string SQLforGeneral = "UPDATE " + table + " SET " + innerSQL + " WHERE id = '" + id + "'";
+                String SQLforGeneral = "UPDATE " + table + " SET " + innerSQL + " WHERE id = '" + id + "'";
                 using (MySqlCommand cmdInsert = new MySqlCommand(SQLforGeneral, con))
                 {
                     con.Open();
@@ -187,7 +174,7 @@ namespace GZBClient
                     con.Open();
                     MySqlDataReader dataReader = cmdCreateTable.ExecuteReader();
                     //String[] resultsStringArray = new String[query.Count];
-                    resultsStringList = new List<string>();
+                    resultsStringList = new List<String>();
 
                     while (dataReader.Read())
                     {
@@ -234,7 +221,7 @@ namespace GZBClient
 
                     while (dataReader.Read())
                     {
-                        List<String> temp = new List<string>();
+                        List<String> temp = new List<String>();
                         for (int i = 0; i < query.Count; i++)
                         {
                             temp.Add(dataReader[query[i]].ToString());
@@ -267,7 +254,7 @@ namespace GZBClient
 
                     while (dataReader.Read())
                     {
-                        List<String> temp = new List<string>();
+                        List<String> temp = new List<String>();
                         for (int i = 0; i < query.Count; i++)
                         {
                             temp.Add(dataReader[query[i]].ToString());
