@@ -1,0 +1,11 @@
+\\psf\Home\Documents\JerryZhu\Programs\Winform\GZBClient\GZBClient\bin\Release\GZBClient.exe.config
+\\psf\Home\Documents\JerryZhu\Programs\Winform\GZBClient\GZBClient\bin\Release\GZBClient.exe
+\\psf\Home\Documents\JerryZhu\Programs\Winform\GZBClient\GZBClient\obj\Release\GZBClient.Danzi.resources
+\\psf\Home\Documents\JerryZhu\Programs\Winform\GZBClient\GZBClient\obj\Release\GZBClient.Detailed.resources
+\\psf\Home\Documents\JerryZhu\Programs\Winform\GZBClient\GZBClient\obj\Release\GZBClient.LoadingScreen.resources
+\\psf\Home\Documents\JerryZhu\Programs\Winform\GZBClient\GZBClient\obj\Release\GZBClient.Login.resources
+\\psf\Home\Documents\JerryZhu\Programs\Winform\GZBClient\GZBClient\obj\Release\GZBClient.MainWindow.resources
+\\psf\Home\Documents\JerryZhu\Programs\Winform\GZBClient\GZBClient\obj\Release\GZBClient.Properties.Resources.resources
+\\psf\Home\Documents\JerryZhu\Programs\Winform\GZBClient\GZBClient\obj\Release\GZBClient.csproj.GenerateResource.Cache
+\\psf\Home\Documents\JerryZhu\Programs\Winform\GZBClient\GZBClient\obj\Release\GZBClient.exe.licenses
+\\psf\Home\Documents\JerryZhu\Programs\Winform\GZBClient\GZBClient\obj\Release\GZBClient.exe

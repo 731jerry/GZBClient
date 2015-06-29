@@ -7,6 +7,7 @@ using System.Text;
 using System.Linq;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using System.Configuration;
 
 namespace GZBClient
 {
@@ -19,23 +20,32 @@ namespace GZBClient
 
         private void Login_Load(object sender, EventArgs e)
         {
+
+            //Properties.Settings.Default.AccountNameList = new System.Collections.Specialized.StringCollection();
             if (Properties.Settings.Default.AccountNameList != null)
             {
                 foreach (String item in Properties.Settings.Default.AccountNameList)
                 {
-                    AccountCB.Text = item;
+                    AccountICB.Properties.Items.Add(item);
                 }
             }
-            else
-            {
-                AccountCB.Text = Properties.Settings.Default.AccountNames;
-            }
+        }
+  
+        private void hyperLinkEdit1_OpenLink(object sender, DevExpress.XtraEditors.Controls.OpenLinkEventArgs e)
+        {
+            System.Diagnostics.Process.Start("http://www.vividapp.net/GZB_register.php");
         }
 
-        private void simpleButton1_Click(object sender, EventArgs e)
+        private void hyperLinkEdit2_OpenLink(object sender, DevExpress.XtraEditors.Controls.OpenLinkEventArgs e)
         {
-            //Properties.Settings.Default.AccountNameList.Add(AccountCB.Text);
-            Properties.Settings.Default.AccountNames = AccountCB.Text;
+            System.Diagnostics.Process.Start("http://www.vividapp.net/GZB_product.php");
+        }
+
+        private void LoginButton_Click(object sender, EventArgs e)
+        {
+            //AccountICB.Properties.Items.Add(new DevExpress.XtraEditors.Controls.ImageComboBoxItem("ceshi",0) );
+            Properties.Settings.Default.AccountNameList.Add(AccountICB.Text);
+            Properties.Settings.Default.Save();             
         }
     }
 }
