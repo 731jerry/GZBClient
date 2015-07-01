@@ -31,6 +31,9 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.AccountICB = new DevExpress.XtraEditors.MRUEdit();
+            this.hyperLinkEdit2 = new DevExpress.XtraEditors.HyperLinkEdit();
+            this.hyperLinkEdit1 = new DevExpress.XtraEditors.HyperLinkEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.pictureEdit3 = new DevExpress.XtraEditors.PictureEdit();
@@ -41,18 +44,15 @@
             this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.hyperLinkEdit1 = new DevExpress.XtraEditors.HyperLinkEdit();
-            this.hyperLinkEdit2 = new DevExpress.XtraEditors.HyperLinkEdit();
-            this.AccountICB = new DevExpress.XtraEditors.MRUEdit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.AccountICB.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hyperLinkEdit2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hyperLinkEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit3.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PasswordET.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RememberPasswordCB.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hyperLinkEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hyperLinkEdit2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.AccountICB.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -74,6 +74,40 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(412, 278);
             this.panel1.TabIndex = 0;
+            // 
+            // AccountICB
+            // 
+            this.AccountICB.Location = new System.Drawing.Point(135, 138);
+            this.AccountICB.Name = "AccountICB";
+            this.AccountICB.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.AccountICB.Properties.MaxItemCount = 5;
+            this.AccountICB.Size = new System.Drawing.Size(141, 20);
+            this.AccountICB.TabIndex = 16;
+            // 
+            // hyperLinkEdit2
+            // 
+            this.hyperLinkEdit2.EditValue = "找回密码";
+            this.hyperLinkEdit2.Location = new System.Drawing.Point(282, 187);
+            this.hyperLinkEdit2.Name = "hyperLinkEdit2";
+            this.hyperLinkEdit2.Properties.Appearance.BackColor = System.Drawing.Color.White;
+            this.hyperLinkEdit2.Properties.Appearance.Options.UseBackColor = true;
+            this.hyperLinkEdit2.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.hyperLinkEdit2.Size = new System.Drawing.Size(55, 18);
+            this.hyperLinkEdit2.TabIndex = 15;
+            this.hyperLinkEdit2.OpenLink += new DevExpress.XtraEditors.Controls.OpenLinkEventHandler(this.hyperLinkEdit2_OpenLink);
+            // 
+            // hyperLinkEdit1
+            // 
+            this.hyperLinkEdit1.EditValue = "注册用户";
+            this.hyperLinkEdit1.Location = new System.Drawing.Point(282, 136);
+            this.hyperLinkEdit1.Name = "hyperLinkEdit1";
+            this.hyperLinkEdit1.Properties.Appearance.BackColor = System.Drawing.Color.White;
+            this.hyperLinkEdit1.Properties.Appearance.Options.UseBackColor = true;
+            this.hyperLinkEdit1.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.hyperLinkEdit1.Size = new System.Drawing.Size(55, 18);
+            this.hyperLinkEdit1.TabIndex = 14;
+            this.hyperLinkEdit1.OpenLink += new DevExpress.XtraEditors.Controls.OpenLinkEventHandler(this.hyperLinkEdit1_OpenLink);
             // 
             // labelControl3
             // 
@@ -166,40 +200,6 @@
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             this.imageList1.Images.SetKeyName(0, "wl_logo.png");
             // 
-            // hyperLinkEdit1
-            // 
-            this.hyperLinkEdit1.EditValue = "注册用户";
-            this.hyperLinkEdit1.Location = new System.Drawing.Point(282, 136);
-            this.hyperLinkEdit1.Name = "hyperLinkEdit1";
-            this.hyperLinkEdit1.Properties.Appearance.BackColor = System.Drawing.Color.White;
-            this.hyperLinkEdit1.Properties.Appearance.Options.UseBackColor = true;
-            this.hyperLinkEdit1.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.hyperLinkEdit1.Size = new System.Drawing.Size(55, 18);
-            this.hyperLinkEdit1.TabIndex = 14;
-            this.hyperLinkEdit1.OpenLink += new DevExpress.XtraEditors.Controls.OpenLinkEventHandler(this.hyperLinkEdit1_OpenLink);
-            // 
-            // hyperLinkEdit2
-            // 
-            this.hyperLinkEdit2.EditValue = "找回密码";
-            this.hyperLinkEdit2.Location = new System.Drawing.Point(282, 187);
-            this.hyperLinkEdit2.Name = "hyperLinkEdit2";
-            this.hyperLinkEdit2.Properties.Appearance.BackColor = System.Drawing.Color.White;
-            this.hyperLinkEdit2.Properties.Appearance.Options.UseBackColor = true;
-            this.hyperLinkEdit2.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.hyperLinkEdit2.Size = new System.Drawing.Size(55, 18);
-            this.hyperLinkEdit2.TabIndex = 15;
-            this.hyperLinkEdit2.OpenLink += new DevExpress.XtraEditors.Controls.OpenLinkEventHandler(this.hyperLinkEdit2_OpenLink);
-            // 
-            // AccountICB
-            // 
-            this.AccountICB.Location = new System.Drawing.Point(135, 138);
-            this.AccountICB.Name = "AccountICB";
-            this.AccountICB.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.AccountICB.Properties.MaxItemCount = 5;
-            this.AccountICB.Size = new System.Drawing.Size(141, 20);
-            this.AccountICB.TabIndex = 16;
-            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -217,14 +217,14 @@
             this.Load += new System.EventHandler(this.Login_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.AccountICB.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hyperLinkEdit2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hyperLinkEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit3.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PasswordET.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.RememberPasswordCB.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hyperLinkEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hyperLinkEdit2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.AccountICB.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

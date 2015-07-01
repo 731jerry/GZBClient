@@ -22,16 +22,17 @@ namespace GZBClient
             de.ShowDialog();
         }
 
-        private void simpleButton2_Click(object sender, EventArgs e)
-        {
-            Danzi dz = new Danzi();
-            dz.ShowDialog();
-        }
 
         private void simpleButton3_Click(object sender, EventArgs e)
         {
             Login lo = new Login();
             lo.ShowDialog();
+        }
+
+        private void simpleButton4_Click(object sender, EventArgs e)
+        {
+            Danzi dz = new Danzi();
+            dz.ShowDialog();
         }
     }
 }
