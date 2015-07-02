@@ -34,5 +34,11 @@ namespace GZBClient
             Danzi dz = new Danzi();
             dz.ShowDialog();
         }
+
+        private void simpleButton5_Click(object sender, EventArgs e)
+        {
+            Danzi2 dz2 = new Danzi2();
+            dz2.ShowDialog();
+        }
     }
 }
