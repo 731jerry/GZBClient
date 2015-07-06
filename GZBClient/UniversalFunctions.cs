@@ -13,6 +13,8 @@ using System.Web;
 using System.Text.RegularExpressions;
 using System.IO.Compression;
 
+using DevExpress;
+
 namespace GZBClient
 {
     class UniversalFunctions
@@ -1300,6 +1302,17 @@ namespace GZBClient
             {
                 MessageBox.Show("请直接联系客服QQ：2424935927或者电话：139-0583-5966", "提示");
             }
+        }
+
+        public Boolean checkIfValdated(List<DevExpress.XtraEditors.BaseControl> controls) {
+            foreach (DevExpress.XtraEditors.BaseControl item in controls)
+            {
+                if (item.Text.Equals(""))
+                {
+                    return false;
+                }
+            }
+            return true;
         }
     }
 }

@@ -2,8 +2,6 @@
 \\psf\Home\Documents\JerryZhu\Programs\Winform\GZBClient\GZBClient\bin\Debug\GZBClient.exe
 \\psf\Home\Documents\JerryZhu\Programs\Winform\GZBClient\GZBClient\bin\Debug\GZBClient.pdb
 \\psf\Home\Documents\JerryZhu\Programs\Winform\GZBClient\GZBClient\obj\Debug\GZBClient.csprojResolveAssemblyReference.cache
-\\psf\Home\Documents\JerryZhu\Programs\Winform\GZBClient\GZBClient\obj\Debug\GZBClient.Danzi.resources
-\\psf\Home\Documents\JerryZhu\Programs\Winform\GZBClient\GZBClient\obj\Debug\GZBClient.Detailed.resources
 \\psf\Home\Documents\JerryZhu\Programs\Winform\GZBClient\GZBClient\obj\Debug\GZBClient.LoadingScreen.resources
 \\psf\Home\Documents\JerryZhu\Programs\Winform\GZBClient\GZBClient\obj\Debug\GZBClient.Login.resources
 \\psf\Home\Documents\JerryZhu\Programs\Winform\GZBClient\GZBClient\obj\Debug\GZBClient.MainWindow.resources
@@ -62,4 +60,4 @@
 \\psf\Home\Documents\JerryZhu\Programs\Winform\GZBClient\GZBClient\bin\Debug\es\DevExpress.XtraPrinting.v14.1.resources.dll
 \\psf\Home\Documents\JerryZhu\Programs\Winform\GZBClient\GZBClient\bin\Debug\ja\DevExpress.XtraPrinting.v14.1.resources.dll
 \\psf\Home\Documents\JerryZhu\Programs\Winform\GZBClient\GZBClient\bin\Debug\ru\DevExpress.XtraPrinting.v14.1.resources.dll
-\\psf\Home\Documents\JerryZhu\Programs\Winform\GZBClient\GZBClient\obj\Debug\GZBClient.Danzi2.resources
+\\psf\Home\Documents\JerryZhu\Programs\Winform\GZBClient\GZBClient\obj\Debug\GZBClient.ClientWindow.resources
