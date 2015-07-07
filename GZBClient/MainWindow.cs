@@ -11,6 +11,7 @@ namespace GZBClient
 {
     public partial class MainWindow : DevExpress.XtraEditors.XtraForm
     {
+        public static String UserID = "001";
         public MainWindow()
         {
             InitializeComponent();

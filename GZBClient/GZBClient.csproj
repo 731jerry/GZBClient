@@ -99,7 +99,7 @@
     <Compile Include="ClientWindow.Designer.cs">
       <DependentUpon>ClientWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="DatabaseConnector.cs" />
+    <Compile Include="DatabaseManager.cs" />
     <Compile Include="LoadingScreen.cs">
       <SubType>Form</SubType>
     </Compile>

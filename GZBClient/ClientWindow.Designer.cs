@@ -32,7 +32,6 @@
             this.client17 = new DevExpress.XtraEditors.MemoEdit();
             this.client18 = new DevExpress.XtraEditors.PictureEdit();
             this.clientSave = new DevExpress.XtraEditors.SimpleButton();
-            this.client19 = new DevExpress.XtraEditors.TextEdit();
             this.client16 = new DevExpress.XtraEditors.TextEdit();
             this.client15 = new DevExpress.XtraEditors.TextEdit();
             this.client12 = new DevExpress.XtraEditors.TextEdit();
@@ -68,15 +67,15 @@
             this.layoutControlItem17 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem20 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem21 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem18 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem19 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.client19 = new DevExpress.XtraEditors.DateEdit();
+            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.client17.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.client18.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.client19.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.client16.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.client15.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.client12.Properties)).BeginInit();
@@ -112,18 +111,20 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem17)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem20)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem21)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem18)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem19)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.client19.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.client19.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.client19);
             this.layoutControl1.Controls.Add(this.client17);
             this.layoutControl1.Controls.Add(this.client18);
             this.layoutControl1.Controls.Add(this.clientSave);
-            this.layoutControl1.Controls.Add(this.client19);
             this.layoutControl1.Controls.Add(this.client16);
             this.layoutControl1.Controls.Add(this.client15);
             this.layoutControl1.Controls.Add(this.client12);
@@ -159,6 +160,7 @@
             // 
             // client18
             // 
+            this.client18.Enabled = false;
             this.client18.Location = new System.Drawing.Point(435, 180);
             this.client18.Name = "client18";
             this.client18.Size = new System.Drawing.Size(270, 41);
@@ -174,14 +176,6 @@
             this.clientSave.TabIndex = 24;
             this.clientSave.Text = "保存";
             this.clientSave.Click += new System.EventHandler(this.clientSave_Click);
-            // 
-            // client19
-            // 
-            this.client19.Location = new System.Drawing.Point(435, 225);
-            this.client19.Name = "client19";
-            this.client19.Size = new System.Drawing.Size(270, 20);
-            this.client19.StyleController = this.layoutControl1;
-            this.client19.TabIndex = 22;
             // 
             // client16
             // 
@@ -308,6 +302,9 @@
             this.client1.Enabled = false;
             this.client1.Location = new System.Drawing.Point(87, 12);
             this.client1.Name = "client1";
+            this.client1.Properties.Mask.EditMask = "0000";
+            this.client1.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.client1.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.client1.Size = new System.Drawing.Size(144, 20);
             this.client1.StyleController = this.layoutControl1;
             this.client1.TabIndex = 5;
@@ -336,10 +333,10 @@
             this.layoutControlItem17,
             this.layoutControlItem20,
             this.layoutControlItem21,
-            this.layoutControlItem18,
             this.emptySpaceItem1,
             this.layoutControlItem19,
-            this.emptySpaceItem2});
+            this.emptySpaceItem2,
+            this.layoutControlItem1});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.Size = new System.Drawing.Size(717, 331);
@@ -568,18 +565,6 @@
             this.layoutControlItem21.TextSize = new System.Drawing.Size(70, 14);
             this.layoutControlItem21.TextToControlDistance = 5;
             // 
-            // layoutControlItem18
-            // 
-            this.layoutControlItem18.Control = this.client19;
-            this.layoutControlItem18.CustomizationFormText = "编录日期：";
-            this.layoutControlItem18.Location = new System.Drawing.Point(348, 213);
-            this.layoutControlItem18.Name = "layoutControlItem18";
-            this.layoutControlItem18.Size = new System.Drawing.Size(349, 24);
-            this.layoutControlItem18.Text = "编录日期：";
-            this.layoutControlItem18.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.CustomSize;
-            this.layoutControlItem18.TextSize = new System.Drawing.Size(70, 14);
-            this.layoutControlItem18.TextToControlDistance = 5;
-            // 
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
@@ -616,6 +601,37 @@
             this.emptySpaceItem2.Text = "emptySpaceItem2";
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
+            // client19
+            // 
+            this.client19.EditValue = null;
+            this.client19.Enabled = false;
+            this.client19.Location = new System.Drawing.Point(435, 225);
+            this.client19.Name = "client19";
+            this.client19.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.client19.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.client19.Properties.Mask.EditMask = "yyyy年MM月dd日 hh:mm:ss";
+            this.client19.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.client19.Size = new System.Drawing.Size(270, 20);
+            this.client19.StyleController = this.layoutControl1;
+            this.client19.TabIndex = 27;
+            // 
+            // layoutControlItem1
+            // 
+            this.layoutControlItem1.Control = this.client19;
+            this.layoutControlItem1.CustomizationFormText = "编录日期：";
+            this.layoutControlItem1.Location = new System.Drawing.Point(348, 213);
+            this.layoutControlItem1.MaxSize = new System.Drawing.Size(0, 24);
+            this.layoutControlItem1.MinSize = new System.Drawing.Size(117, 24);
+            this.layoutControlItem1.Name = "layoutControlItem1";
+            this.layoutControlItem1.Size = new System.Drawing.Size(349, 24);
+            this.layoutControlItem1.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            this.layoutControlItem1.Text = "编录日期：";
+            this.layoutControlItem1.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.CustomSize;
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(70, 20);
+            this.layoutControlItem1.TextToControlDistance = 5;
+            // 
             // ClientWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -635,7 +651,6 @@
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.client17.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.client18.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.client19.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.client16.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.client15.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.client12.Properties)).EndInit();
@@ -671,10 +686,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem17)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem20)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem21)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem18)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem19)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.client19.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.client19.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -685,7 +702,6 @@
         private DevExpress.XtraEditors.MemoEdit client17;
         private DevExpress.XtraEditors.PictureEdit client18;
         private DevExpress.XtraEditors.SimpleButton clientSave;
-        private DevExpress.XtraEditors.TextEdit client19;
         private DevExpress.XtraEditors.TextEdit client16;
         private DevExpress.XtraEditors.TextEdit client15;
         private DevExpress.XtraEditors.TextEdit client12;
@@ -721,9 +737,10 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem17;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem20;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem21;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem18;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem19;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem2;
+        private DevExpress.XtraEditors.DateEdit client19;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
     }
 }

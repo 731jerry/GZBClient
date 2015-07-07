@@ -14,6 +14,9 @@ using System.Text.RegularExpressions;
 using System.IO.Compression;
 
 using DevExpress;
+using MySql.Data.MySqlClient;
+using System.Data;
+using System.Reflection;
 
 namespace GZBClient
 {
@@ -1248,7 +1251,7 @@ namespace GZBClient
                     return true;
                 }
             }
-            catch 
+            catch
             {
                 return false;
             }
@@ -1304,7 +1307,8 @@ namespace GZBClient
             }
         }
 
-        public Boolean checkIfValdated(List<DevExpress.XtraEditors.BaseControl> controls) {
+        public Boolean CheckIfValdated(List<DevExpress.XtraEditors.BaseControl> controls)
+        {
             foreach (DevExpress.XtraEditors.BaseControl item in controls)
             {
                 if (item.Text.Equals(""))
@@ -1314,5 +1318,104 @@ namespace GZBClient
             }
             return true;
         }
+
+        public List<MySqlParameter> CombineMysqlParametersByBaseControl(List<String> para, List<String> controls)
+        {
+            List<MySqlParameter> mysqlParameter = new List<MySqlParameter>();
+            if (para.Count == controls.Count)
+            {
+                for (int i = 0; i < para.Count; i++)
+                {
+                    mysqlParameter.Add(new MySqlParameter("@" + para[i], controls[i]));
+                }
+            }
+            return mysqlParameter;
+        }
+
+        // 自动生成ID
+        public String GetAutoincreaseID(String table, String baseName)
+        {
+            String sql = "SELECT max(cast(" + baseName + " as UNSIGNED INTEGER)) as max FROM " + table + " WHERE gzb_account ='" + MainWindow.UserID + "'";
+            int maxID = Convert.ToInt32(DatabaseManager.Ins.ExecuteScalar(sql, null));
+            //return FormatID((maxID + 1).ToString(), 4, "0");
+            return (maxID + 1).ToString();
+        }
+
+        public Boolean SetValuesByBaseControls(List<String> values, List<DevExpress.XtraEditors.BaseControl> controls)
+        {
+            Boolean results = false;
+            if (values.Count == controls.Count)
+            {
+                for (int i = 0; i < values.Count; i++)
+                {
+                    controls[i].Text = values[i];
+                }
+                results = true;
+            }
+            return results;
+        }
+
+        #region DataTable 转 List 转化方法DataTableConvertToList
+        // 转化方法DataTableConvertToList
+        public  IList<T> DataTableConvertToList<T>(DataTable table)
+        {
+            if (table == null)
+            {
+                return null;
+            }
+
+            List<DataRow> rows = new List<DataRow>();
+
+            foreach (DataRow row in table.Rows)
+            {
+                rows.Add(row);
+            }
+
+            return ConvertTo<T>(rows);
+        }
+
+        public  IList<T> ConvertTo<T>(IList<DataRow> rows)
+        {
+            IList<T> list = null;
+
+            if (rows != null)
+            {
+                list = new List<T>();
+
+                foreach (DataRow row in rows)
+                {
+                    T item = CreateItem<T>(row);
+                    list.Add(item);
+                }
+            }
+
+            return list;
+        }
+
+        public  T CreateItem<T>(DataRow row)
+        {
+            T obj = default(T);
+            if (row != null)
+            {
+                obj = Activator.CreateInstance<T>();
+
+                foreach (DataColumn column in row.Table.Columns)
+                {
+                    PropertyInfo prop = obj.GetType().GetProperty(column.ColumnName);
+                    try
+                    {
+                        object value = row[column.ColumnName];
+                        prop.SetValue(obj, value, null);
+                    }
+                    catch
+                    {  //You can log something here    
+                        //throw;   
+                    }
+                }
+            }
+
+            return obj;
+        }
+        #endregion
     }
 }
