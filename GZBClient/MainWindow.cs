@@ -28,5 +28,20 @@ namespace GZBClient
             ClientWindow cw = new ClientWindow();
             cw.ShowDialog();
         }
+
+        private void jcdAdd_Click(object sender, EventArgs e)
+        {
+            JCDWindow jcdW = new JCDWindow();
+            jcdW.ShowDialog();
+        }
+
+        private void simpleButton4_Click(object sender, EventArgs e)
+        {
+            String sqlPara = "clientID,companyName,gzbID,address,contactName,tel,fax,postNumber,bankName,email,bankAccount,taxNumber,PrivateBank,mainContact,mainTel,mainPhone,beizhu,modifyName,modifyDate";
+            String sql = "SELECT " + sqlPara + " FROM gzb_clients WHERE gzb_account ='" + MainWindow.UserID + "'";
+            DataTable data = DatabaseManager.Ins.ExcuteDataTable(sql, null);
+
+            this.clientGridControl.DataSource = data;
+        }
     }
 }

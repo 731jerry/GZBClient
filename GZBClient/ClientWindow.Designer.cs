@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.client19 = new DevExpress.XtraEditors.DateEdit();
             this.client17 = new DevExpress.XtraEditors.MemoEdit();
             this.client18 = new DevExpress.XtraEditors.PictureEdit();
             this.clientSave = new DevExpress.XtraEditors.SimpleButton();
@@ -70,10 +71,11 @@
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem19 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.client19 = new DevExpress.XtraEditors.DateEdit();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.client19.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.client19.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.client17.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.client18.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.client16.Properties)).BeginInit();
@@ -114,8 +116,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem19)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.client19.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.client19.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -149,6 +149,22 @@
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
+            // client19
+            // 
+            this.client19.EditValue = null;
+            this.client19.Enabled = false;
+            this.client19.Location = new System.Drawing.Point(435, 225);
+            this.client19.Name = "client19";
+            this.client19.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.client19.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.client19.Properties.Mask.EditMask = "yyyy年MM月dd日 hh:mm:ss";
+            this.client19.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.client19.Size = new System.Drawing.Size(270, 20);
+            this.client19.StyleController = this.layoutControl1;
+            this.client19.TabIndex = 27;
+            // 
             // client17
             // 
             this.client17.Location = new System.Drawing.Point(87, 180);
@@ -156,7 +172,6 @@
             this.client17.Size = new System.Drawing.Size(269, 139);
             this.client17.StyleController = this.layoutControl1;
             this.client17.TabIndex = 26;
-            this.client17.UseOptimizedRendering = true;
             // 
             // client18
             // 
@@ -340,7 +355,6 @@
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.Size = new System.Drawing.Size(717, 331);
-            this.layoutControlGroup1.Text = "layoutControlGroup1";
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem2
@@ -546,9 +560,7 @@
             this.layoutControlItem20.Location = new System.Drawing.Point(593, 285);
             this.layoutControlItem20.Name = "layoutControlItem20";
             this.layoutControlItem20.Size = new System.Drawing.Size(104, 26);
-            this.layoutControlItem20.Text = "layoutControlItem20";
             this.layoutControlItem20.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem20.TextToControlDistance = 0;
             this.layoutControlItem20.TextVisible = false;
             // 
             // layoutControlItem21
@@ -574,7 +586,6 @@
             this.emptySpaceItem1.Name = "emptySpaceItem1";
             this.emptySpaceItem1.Size = new System.Drawing.Size(349, 48);
             this.emptySpaceItem1.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            this.emptySpaceItem1.Text = "emptySpaceItem1";
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem19
@@ -598,24 +609,7 @@
             this.emptySpaceItem2.Location = new System.Drawing.Point(348, 285);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
             this.emptySpaceItem2.Size = new System.Drawing.Size(245, 26);
-            this.emptySpaceItem2.Text = "emptySpaceItem2";
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // client19
-            // 
-            this.client19.EditValue = null;
-            this.client19.Enabled = false;
-            this.client19.Location = new System.Drawing.Point(435, 225);
-            this.client19.Name = "client19";
-            this.client19.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.client19.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.client19.Properties.Mask.EditMask = "yyyy年MM月dd日 hh:mm:ss";
-            this.client19.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.client19.Size = new System.Drawing.Size(270, 20);
-            this.client19.StyleController = this.layoutControl1;
-            this.client19.TabIndex = 27;
             // 
             // layoutControlItem1
             // 
@@ -649,6 +643,8 @@
             this.Load += new System.EventHandler(this.ClientWindow_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.client19.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.client19.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.client17.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.client18.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.client16.Properties)).EndInit();
@@ -689,8 +685,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem19)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.client19.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.client19.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             this.ResumeLayout(false);
 
