@@ -27,38 +27,41 @@ namespace GZBClient
         {
             this.printDocument1.DefaultPageSettings.PaperSize = new System.Drawing.Printing.PaperSize("custom", this.printDocument1.DefaultPageSettings.PaperSize.Width, 480);
 
-            using (CoolPrintPreviewDialog dlg = new CoolPrintPreviewDialog())
-            {
-                dlg.Document = this.printDocument1;
-                //dlg.WindowState = FormWindowState.Maximized;
-                dlg.Size = new Size(800, 600);
+            CoolPrintPreviewDialog dlg = new CoolPrintPreviewDialog();
+            dlg.Document = this.printDocument1;
+            //dlg.WindowState = FormWindowState.Maximized;
+            dlg.Size = new Size(800, 600);
+            dlg.Show(this);
 
-                if (dlg.ShowDialog(this) == System.Windows.Forms.DialogResult.OK)
-                {
-                    //SaveButton.PerformClick();
-                }
+            /*
+            if (dlg.ShowDialog(this) == System.Windows.Forms.DialogResult.OK)
+            {
+                //SaveButton.PerformClick();
             }
+             */
         }
 
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
             Graphics g = e.Graphics;   //先建立画布
+
             SizeF fontSize;
 
             Font f1 = new Font("黑体", 20, FontStyle.Bold);
             Font f2 = new Font("微软雅黑", 9);
 
             int x = 0, y = 0, tableX = 0, tableY = 0;
+
+            if (checkEdit1.Checked)
+            {
+                g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.NearestNeighbor;
+                g.PixelOffsetMode = System.Drawing.Drawing2D.PixelOffsetMode.Half;
+                g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            }
+            g.DrawImage(pictureEdit1.Image, new Rectangle(pictureEdit1.Location.X + x + tableX, pictureEdit1.Location.Y + y + tableY - 20, pictureEdit1.Width, pictureEdit1.Height));
+
             foreach (BaseControl item in panelControl1.Controls)
             {
-                if (item is PictureEdit)
-                {
-                    PictureEdit tx = (item as PictureEdit);
-                    //g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.NearestNeighbor;
-                    //g.PixelOffsetMode = System.Drawing.Drawing2D.PixelOffsetMode.Half;
-                    //g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-                    g.DrawImage(tx.Image, new Rectangle(tx.Location.X + x + tableX, tx.Location.Y + y + tableY - 20, tx.Width, tx.Height));
-                }
                 if (item is LabelControl)
                 {
                     LabelControl tx = (item as LabelControl);
@@ -67,10 +70,8 @@ namespace GZBClient
                 if (item is TextEdit)
                 {
                     TextEdit tx = (item as TextEdit);
-                    //g.DrawString(tx.Text, tx.Font, new SolidBrush(tx.ForeColor), tx.Location.X + x + tableX, tx.Location.Y + y + 3 + tableY);
                     g.DrawString(tx.Text, tx.Font, new SolidBrush(tx.ForeColor), tx.Location.X + x + tableX, tx.Location.Y + y + tableY - 20);
                 }
-               
             }
         }
 

@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(JCDWindow));
             this.saveButton = new DevExpress.XtraEditors.SimpleButton();
             this.printButton = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
@@ -42,9 +41,11 @@
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
+            this.checkEdit1 = new DevExpress.XtraEditors.CheckEdit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // saveButton
@@ -66,14 +67,6 @@
             this.printButton.Text = "打印";
             this.printButton.Click += new System.EventHandler(this.printButton_Click);
             // 
-            // simpleButton1
-            // 
-            this.simpleButton1.Location = new System.Drawing.Point(827, 304);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(75, 23);
-            this.simpleButton1.TabIndex = 8;
-            this.simpleButton1.Text = "simpleButton1";
-            // 
             // panelControl1
             // 
             this.panelControl1.Controls.Add(this.labelControl5);
@@ -92,7 +85,7 @@
             // 
             this.labelControl5.Location = new System.Drawing.Point(629, 63);
             this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(70, 14);
+            this.labelControl5.Size = new System.Drawing.Size(71, 14);
             this.labelControl5.TabIndex = 11;
             this.labelControl5.Text = "labelControl5";
             // 
@@ -100,7 +93,7 @@
             // 
             this.labelControl4.Location = new System.Drawing.Point(27, 83);
             this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(70, 14);
+            this.labelControl4.Size = new System.Drawing.Size(71, 14);
             this.labelControl4.TabIndex = 10;
             this.labelControl4.Text = "labelControl4";
             // 
@@ -108,7 +101,7 @@
             // 
             this.labelControl3.Location = new System.Drawing.Point(27, 63);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(70, 14);
+            this.labelControl3.Size = new System.Drawing.Size(71, 14);
             this.labelControl3.TabIndex = 9;
             this.labelControl3.Text = "labelControl3";
             // 
@@ -116,7 +109,7 @@
             // 
             this.labelControl2.Location = new System.Drawing.Point(27, 43);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(70, 14);
+            this.labelControl2.Size = new System.Drawing.Size(71, 14);
             this.labelControl2.TabIndex = 8;
             this.labelControl2.Text = "labelControl2";
             // 
@@ -158,13 +151,21 @@
             // 
             this.printDialog1.UseEXDialog = true;
             // 
+            // checkEdit1
+            // 
+            this.checkEdit1.Location = new System.Drawing.Point(827, 297);
+            this.checkEdit1.Name = "checkEdit1";
+            this.checkEdit1.Properties.Caption = "高清";
+            this.checkEdit1.Size = new System.Drawing.Size(75, 19);
+            this.checkEdit1.TabIndex = 10;
+            // 
             // JCDWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(933, 484);
+            this.Controls.Add(this.checkEdit1);
             this.Controls.Add(this.panelControl1);
-            this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.printButton);
             this.Controls.Add(this.saveButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -179,6 +180,7 @@
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -187,7 +189,6 @@
 
         private DevExpress.XtraEditors.SimpleButton saveButton;
         private DevExpress.XtraEditors.SimpleButton printButton;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.LabelControl labelControl4;
@@ -198,5 +199,6 @@
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
         private System.Drawing.Printing.PrintDocument printDocument1;
         private System.Windows.Forms.PrintDialog printDialog1;
+        private DevExpress.XtraEditors.CheckEdit checkEdit1;
     }
 }
